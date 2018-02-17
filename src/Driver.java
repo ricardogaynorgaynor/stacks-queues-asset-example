@@ -27,6 +27,16 @@ public class Driver {
 			System.out.println("Top of stack: ");
 			top.getData().display();
 		}
+		Asset temp=null;
+		for(int i=0;i<AMOUNT+1;i++) {
+			temp = stack.pop();
+			if(temp == null) {
+				System.out.println("Did not pop an asset from the stack");
+			}else {
+				System.out.println("Popped : ");
+				temp.display();
+			}
+		}
 		
 		
 		
