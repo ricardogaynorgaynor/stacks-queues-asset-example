@@ -55,7 +55,7 @@ public class Stack {
 	   return asset;
 	}
 	
-	void destroy() {
+	public void destroy() {
 		while(pop()!=null);
 	}
 

@@ -3,6 +3,42 @@ public class Driver {
 
 	public static void main(String[] args) {
        runStackExample();
+       runQueueExample();
+       
+	}
+	
+	public static void runQueueExample() {
+		System.out.println("Queue Example");
+		final int AMOUNT = 3;
+		Asset[] assets = new Asset[AMOUNT];
+		for(int i=1;i<=AMOUNT;i++) {
+			assets[i-1]=new Asset(i,"Asset "+i,i*300);
+		}
+		
+		Queue queue = new Queue();//create a Queue
+		for(int i=0;i<AMOUNT;i++) {
+			queue.enqueue(assets[i]); //enqueue an element onto Queue
+			System.out.println("enqueue: ");
+			assets[i].display();
+		}
+		
+
+		Asset temp=null;
+		for(int i=0;i<AMOUNT+1;i++) {
+			temp = queue.dequeue();
+			if(temp == null) {
+				System.out.println("Did not dequeue an asset from the Queue");
+			}else {
+				System.out.println("dequeue : ");
+				temp.display();
+			}
+		}
+		
+		queue.destroy();
+		
+		
+		
+		
 	}
 	
 	public static void runStackExample() {
